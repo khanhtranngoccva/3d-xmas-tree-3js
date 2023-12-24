@@ -35,8 +35,8 @@ function Group2() {
       <Bell position={[-32.5, -27.5, 47.5]} color={"#ffffff"}></Bell>
       <Bell position={[-57.5, -27.5, -7.5]} color={"#e35a5a"}></Bell>
       <Bell position={[-22.5, -27.5, -47.5]} color={"#5a5ae3"}></Bell>
-      <CandyCane position={[-6.25,-31.25,58.75]}></CandyCane>
-      <CandyCane position={[-48.75,-31.25,-31.25]} rotation={[0, -Math.PI / 2, 0]}></CandyCane>
+      <CandyCane position={[-6.25,-32.5,58.75]}></CandyCane>
+      <CandyCane position={[-48.75,-32.5,-31.25]} rotation={[0, -Math.PI / 2, 0]}></CandyCane>
       <GiftBox color={"yellow"} height={10} width={10} length={10} position={[-55,-35,25]} ropeLength={5}></GiftBox>
       <GiftBox color={"#716cff"} height={10} width={10} length={10} position={[-10,-35,-60]} rotation={[0, Math.PI / 2, 0]} ropeLength={5}></GiftBox>
 

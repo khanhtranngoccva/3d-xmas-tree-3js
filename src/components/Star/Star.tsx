@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as THREE from 'three';
 import {GroupProps} from "@react-three/fiber";
-import {useBloomObject} from "@/components/BloomProvider";
 
 function Star(props: GroupProps, ref: React.ForwardedRef<THREE.Mesh|null>) {
   const points = [
@@ -47,8 +46,6 @@ function Star(props: GroupProps, ref: React.ForwardedRef<THREE.Mesh|null>) {
     };
   }, []);
 
-  // useBloomObject("starBloom", internalRef);
-
   return <group {...props}>
     <mesh castShadow={true} receiveShadow={true} position={[0, 0, -5]} ref={e => {
       internalRef.current = e;
@@ -62,7 +59,7 @@ function Star(props: GroupProps, ref: React.ForwardedRef<THREE.Mesh|null>) {
         depth: 10,
         bevelEnabled: false
       }]}></extrudeGeometry>
-      <meshPhongMaterial color={lightsOn ? "#ffdc66" : "#523f01"}></meshPhongMaterial>
+      <meshPhongMaterial color={lightsOn ? "#ffcd4e" : "#523f01"}></meshPhongMaterial>
     </mesh>
   </group>;
 }

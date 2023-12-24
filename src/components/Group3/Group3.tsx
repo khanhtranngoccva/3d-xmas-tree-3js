@@ -44,8 +44,8 @@ function Group3() {
     <Bell position={[72.5,-32.5,-52.5]} color={"#d52a2a"}></Bell>
     <Bell position={[77.5,-32.5,37.5]} color={"#d52a2a"}></Bell>
     <GiftBox position={[15,-40,90]} width={10} height={10} length={10} ropeLength={5} wrappingColor={"#ffd532"} color={"#4e4eff"}></GiftBox>
-    <CandyCane position={[51.25,-36.25,73.75]} ></CandyCane>
-    <CandyCane position={[53.75,-36.25,-71.25]} rotation={[0, Math.PI / 2, 0]} ></CandyCane>
+    <CandyCane position={[51.25,-37.5,73.75]} ></CandyCane>
+    <CandyCane position={[53.75,-37.5,-71.25]} rotation={[0, Math.PI / 2, 0]} ></CandyCane>
     <GiftBox position={[90,-40,15]} rotation={[0, Math.PI / 2, 0]} width={10} height={10} length={10} ropeLength={5} wrappingColor={"#ff3262"} color={"#b84eff"}></GiftBox>
     <GiftBox position={[-90,-40,-15]} rotation={[0, Math.PI / 2, 0]} width={10} height={10} length={10} ropeLength={5} wrappingColor={"#ffa632"} color={"#b84eff"}></GiftBox>
   </group>;

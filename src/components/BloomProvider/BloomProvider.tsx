@@ -17,8 +17,11 @@ type BloomState = Map<string, BloomLayer>
 
 interface BloomContext {
   addLight(key: string, light: THREE.Light): void;
+
   removeLight(key: string, light: THREE.Light): void;
+
   addObject(key: string, object: THREE.Object3D): void;
+
   removeObject(key: string, object: THREE.Object3D): void;
 }
 
@@ -27,11 +30,20 @@ function _contextError() {
 }
 
 export const BloomContext = React.createContext<BloomContext>({
-  addLight(key: string, light: Light) {_contextError()},
-  removeLight(key: string, light: Light) {_contextError()},
-  addObject(key: string, light: Light) {_contextError()},
-  removeObject(key: string, light: Light) {_contextError()},
+  addLight(key: string, light: Light) {
+    _contextError();
+  },
+  removeLight(key: string, light: Light) {
+    _contextError();
+  },
+  addObject(key: string, light: Light) {
+    _contextError();
+  },
+  removeObject(key: string, light: Light) {
+    _contextError();
+  },
 });
+
 
 function BloomProvider(props: {
   blooms: Record<string, BloomProps>,
@@ -105,24 +117,25 @@ function BloomProvider(props: {
     });
   }, []);
 
+  const result = Object.keys(props.blooms).map(key => {
+    const bloomProps = props.blooms[key];
+    const bloomData = bloomState.get(key);
+    if (!bloomProps || !bloomData) return null;
+    if (!bloomData.lights.size || !bloomData.selection.size) return null;
+    return <SelectiveBloom
+      {...bloomProps}
+      key={key}
+      lights={Array.from(bloomData.lights)}
+      selection={Array.from(bloomData.selection)}>
+    </SelectiveBloom>;
+  });
   return <BloomContext.Provider value={useMemoizedObject({
     addLight,
     removeLight,
     addObject,
     removeObject,
   })}>
-    {Object.keys(props.blooms).map(key => {
-      const bloomProps = props.blooms[key];
-      const bloomData = bloomState.get(key);
-      if (!bloomProps || !bloomData) return null;
-      if (!bloomData.lights.size || !bloomData.selection.size) return null;
-      return <SelectiveBloom
-        {...bloomProps}
-        key={key}
-        lights={Array.from(bloomData.lights)}
-        selection={Array.from(bloomData.selection)}>
-      </SelectiveBloom>;
-    })}
+    {result}
     {props.children}
   </BloomContext.Provider>;
 }
@@ -136,7 +149,7 @@ export function useBloomLight(key: string, ref: React.RefObject<THREE.Light>) {
     context.addLight(key, light);
     return () => {
       context.removeLight(key, light);
-    }
+    };
   }, [key, context, ref]);
 }
 
@@ -149,7 +162,7 @@ export function useBloomObject(key: string, ref: React.RefObject<THREE.Object3D>
     context.addObject(key, object);
     return () => {
       context.removeObject(key, object);
-    }
+    };
   }, [key, context, ref]);
 }
 

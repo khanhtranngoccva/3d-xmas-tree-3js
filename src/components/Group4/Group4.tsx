@@ -32,11 +32,11 @@ function Group4() {
     <Bell position={[-47.5, -12.5, 97.5]} color={"#fd57fd"}></Bell>
     <Bell position={[-77.5, -17.5, 82.5]} color={"#5a5ae3"}></Bell>
     <Bell position={[-107.5, -17.5, 32.5]} color={"#fd57fd"}></Bell>
-    <CandyCane position={[-3.75, -31.25, 108.75]}></CandyCane>
-    <CandyCane position={[-81.25, -31.25, 61.25]} rotation={[0, Math.PI / 2, 0]}></CandyCane>
-    <CandyCane position={[-111.25, -31.25, -11.25]} rotation={[0, Math.PI / 2, 0]}></CandyCane>
-    <CandyCane position={[-33.75, -31.25, -101.25]} rotation={[0, Math.PI / 2, 0]}></CandyCane>
-    <CandyCane position={[108.75, -31.25, 11.25]} rotation={[0, -Math.PI / 2, 0]}></CandyCane>
+    <CandyCane position={[-3.75, -32.5, 108.75]}></CandyCane>
+    <CandyCane position={[-81.25, -32.5, 61.25]} rotation={[0, Math.PI / 2, 0]}></CandyCane>
+    <CandyCane position={[-111.25, -32.5, -11.25]} rotation={[0, Math.PI / 2, 0]}></CandyCane>
+    <CandyCane position={[-33.75, -32.5, -101.25]} rotation={[0, Math.PI / 2, 0]}></CandyCane>
+    <CandyCane position={[108.75, -32.5, 11.25]} rotation={[0, -Math.PI / 2, 0]}></CandyCane>
     <GiftBox position={[50, -35, 100]} width={10} height={10} length={10} ropeLength={5} wrappingColor={"#ffc13b"}
              color={"#ad0b0b"}></GiftBox>
     <GiftBox position={[-110, -35, 15]} rotation={[0, Math.PI / 2, 0]} width={10} height={10} length={10} ropeLength={5}
