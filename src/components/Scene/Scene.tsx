@@ -3,10 +3,15 @@ import Tree from "@/components/Tree";
 import {OrbitControls} from "@react-three/drei";
 import {Bloom, EffectComposer} from "@react-three/postprocessing";
 import Lights from "@/components/Lights";
+import {useSearchParams} from "next/navigation";
 
 function Scene() {
+  const params = useSearchParams();
+  const bloom = +(params.get("bloom") ?? 3);
+
+
   return <EffectComposer enabled={true} disableNormalPass={true}>
-    <Bloom intensity={3} luminanceThreshold={0.25} mipmapBlur={true}></Bloom>
+    <Bloom intensity={bloom} luminanceThreshold={0.25} mipmapBlur={true}></Bloom>
     <Lights></Lights>
     <Tree></Tree>
     <OrbitControls maxDistance={700} target={[0, 150, 0]} enablePan={false} maxPolarAngle={Math.PI / 2}
