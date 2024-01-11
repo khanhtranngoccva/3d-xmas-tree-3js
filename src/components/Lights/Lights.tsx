@@ -11,9 +11,9 @@ function Lights() {
     for (let lightRef of [lightRef0, lightRef1, lightRef2]) {
       const light = lightRef.current;
       if (!light) return;
-      light.shadow.normalBias = 1;
-      light.shadow.mapSize.width = 8192;
-      light.shadow.mapSize.height = 8192;
+      light.shadow.normalBias = 4;
+      light.shadow.mapSize.width = 1024;
+      light.shadow.mapSize.height = 1024;
       light.shadow.camera.near = 0.5;
       light.shadow.camera.far = 3000;
       light.shadow.camera.left = -600;
