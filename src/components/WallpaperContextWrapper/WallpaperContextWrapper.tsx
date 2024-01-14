@@ -97,15 +97,13 @@ function WallpaperContextWrapper(props: {
   React.useEffect(() => {
     const item = localStorage.getItem("config");
     if (item) {
-      setTimeout(() => {
-        const parsed = JSON.parse(item) as WallpaperContextSchema;
-        for (let _key in defaultValues) {
-          let key = _key as keyof WallpaperContextSchema;
-          parsed[key] ??= defaultValues[key];
-        }
-        setState(parsed);
-        setLoaded(true);
-      }, 500);
+      const parsed = JSON.parse(item) as WallpaperContextSchema;
+      for (let _key in defaultValues) {
+        let key = _key as keyof WallpaperContextSchema;
+        parsed[key] ??= defaultValues[key];
+      }
+      setState(parsed);
+      setLoaded(true);
     }
   }, []);
 
