@@ -1,0 +1,58 @@
+{
+  "bloom": {
+    "max": 5,
+    "min": 0,
+    "step": 0.25,
+    "text": "Bloom",
+    "type": "slider",
+    "value": 3
+  },
+  "snowInterval": {
+    "max": 60,
+    "min": 5,
+    "step": 5,
+    "text": "Snow interval",
+    "type": "slider",
+    "value": 10
+  },
+  "offsetX": {
+    "max": 1000,
+    "min": -1000,
+    "step": 20,
+    "text": "X-offset",
+    "type": "slider",
+    "value": 0
+  },
+  "offsetY": {
+    "max": 1000,
+    "min": -1000,
+    "step": 20,
+    "text": "Y-offset",
+    "type": "slider",
+    "value": 0
+  },
+  "mapWidth": {
+    "max": 8192,
+    "min": 512,
+    "step": 512,
+    "text": "Shadow map width",
+    "type": "slider",
+    "value": 1024
+  },
+  "mapHeight": {
+    "max": 8192,
+    "min": 512,
+    "step": 512,
+    "text": "Shadow map height",
+    "type": "slider",
+    "value": 1024
+  },
+  "normalBias": {
+    "max": 12,
+    "min": 1,
+    "step": 0.5,
+    "text": "Shadow map width",
+    "type": "slider",
+    "value": 4
+  }
+}

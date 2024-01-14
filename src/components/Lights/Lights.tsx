@@ -1,13 +1,10 @@
 import * as React from 'react';
 import * as THREE from "three";
-import {useSearchParams} from "next/navigation";
+import {WallpaperContext} from "@/components/WallpaperContextWrapper";
+import {PCFSoftShadowMap} from "three";
 
 function Lights() {
-  const params = useSearchParams();
-  const normalBias = +(params.get("normalBias") ?? 4);
-  const mapWidth = +(params.get("mapWidth") ?? 1024);
-  const mapHeight = +(params.get("mapHeight") ?? 1024);
-
+  const {normalBias, mapWidth, mapHeight} = React.useContext(WallpaperContext);
   const lightRef0 = React.useRef<THREE.DirectionalLight | null>(null);
   const lightRef1 = React.useRef<THREE.DirectionalLight | null>(null);
   const lightRef2 = React.useRef<THREE.DirectionalLight | null>(null);
@@ -18,8 +15,8 @@ function Lights() {
       const light = lightRef.current;
       if (!light) return;
       light.shadow.normalBias = normalBias;
-      light.shadow.mapSize.width = mapWidth;
-      light.shadow.mapSize.height = mapHeight;
+      light.shadow.map?.setSize(mapWidth, mapHeight);
+      light.shadow.mapSize.set(mapWidth, mapHeight);
       light.shadow.camera.near = 0.5;
       light.shadow.camera.far = 3000;
       light.shadow.camera.left = -600;
